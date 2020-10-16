@@ -1,6 +1,7 @@
 package webcam;
 
 import java.awt.Dimension;
+import org.opencv.core.Core;
 
 /**
  * @author Lucas-HMSC
