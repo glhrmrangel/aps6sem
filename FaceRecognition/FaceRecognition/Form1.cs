@@ -20,10 +20,12 @@ namespace FaceRecognition
 {
     public partial class Form1 : Form
     {
+        //LÊ ISSO AQUI POR FAVOR: tem algumas melhorias que dá pra fazer na aplicação comparado a como está agora:
+        //O botão de TREINAMENTO e ADICIONAR CADASTRO podem ficar disponíveis só depois que identificarmos um rosto e permitirmos o login, que acontece no RECONHECER
         #region Variables
         int testid = 0;
-        private Capture videoCapture = null;
-        private Image<Bgr, Byte> currentFrame = null;
+        private Capture captura = null;
+        private Image<Bgr, Byte> fotoAtual = null;
         Mat frame = new Mat();
         private bool facesDetectionEnabled = false;
         CascadeClassifier faceCasacdeClassifier = new CascadeClassifier(@"haarcascade_frontalface_alt_tree.xml");
@@ -45,9 +47,9 @@ namespace FaceRecognition
 
         private void btnCapture_Click(object sender, EventArgs e)
         {
-            //Dispose of Capture if it was created before
-            if (videoCapture != null) videoCapture.Dispose();
-            videoCapture = new Capture();
+            //Confere se já havia captura
+            if (captura != null) captura.Dispose();
+            captura = new Capture();
             //videoCapture.ImageGrabbed += ProcessFrame;
             Application.Idle += ProcessFrame;
             // videoCapture.Start();
@@ -55,51 +57,48 @@ namespace FaceRecognition
 
         private void ProcessFrame(object sender, EventArgs e)
         {
-            //Step 1: Video Capture
-            if (videoCapture != null && videoCapture.Ptr != IntPtr.Zero)
+            //Passo 1: tira a foto
+            if (captura != null && captura.Ptr != IntPtr.Zero)
             {
-                videoCapture.Retrieve(frame, 0);
-                currentFrame = frame.ToImage<Bgr, Byte>().Resize(picCapture.Width, picCapture.Height, Inter.Cubic);
+                captura.Retrieve(frame, 0);
+                fotoAtual = frame.ToImage<Bgr, Byte>().Resize(picCapture.Width, picCapture.Height, Inter.Cubic);
 
-                //Step 2: Face Detection
+                //Área de detecção facial
                 if (facesDetectionEnabled)
                 {
-
-                    //Convert from Bgr to Gray Image
+                    //Conversão da imagem
                     Mat grayImage = new Mat();
-                    CvInvoke.CvtColor(currentFrame, grayImage, ColorConversion.Bgr2Gray);
-                    //Enhance the image to get better result
+                    CvInvoke.CvtColor(fotoAtual, grayImage, ColorConversion.Bgr2Gray);
+                    //Deixar a imagem cinza pra melhorar a comparação, dá pra testar sem isso
                     CvInvoke.EqualizeHist(grayImage, grayImage);
 
                     Rectangle[] faces = faceCasacdeClassifier.DetectMultiScale(grayImage, 1.1, 3, Size.Empty, Size.Empty);
-                    //If faces detected
+                    //Caso haja detecção
                     if (faces.Length > 0)
                     {
 
                         foreach (var face in faces)
                         {
-                            //Draw square around each face 
+                            //Caso identifique um rosto, esse comando aqui detectaria e desenharia um quadrado
                             // CvInvoke.Rectangle(currentFrame, face, new Bgr(Color.Red).MCvScalar, 2);
 
-                            //Step 3: Add Person 
-                            //Assign the face to the picture Box face picDetected
-                            Image<Bgr, Byte> resultImage = currentFrame.Convert<Bgr, Byte>();
+                            //Adicionar pessoas ao registro
+                            Image<Bgr, Byte> resultImage = fotoAtual.Convert<Bgr, Byte>();
                             resultImage.ROI = face;
                             picDetected.SizeMode = PictureBoxSizeMode.StretchImage;
                             picDetected.Image = resultImage.Bitmap;
 
                             if (EnableSaveImage)
                             {
-                                //We will create a directory if does not exists!
+                                //As imagens ficam salvas em pastas, caso o diretório ainda não esteja criado, essa parte vai criar
                                 string path = Directory.GetCurrentDirectory() + @"\TrainedImages";
                                 if (!Directory.Exists(path))
                                     Directory.CreateDirectory(path);
-                                //we will save 10 images with delay a second for each image 
-                                //to avoid hang GUI we will create a new task
+
                                 Task.Factory.StartNew(() => {
                                     for (int i = 0; i < 10; i++)
                                     {
-                                        //resize the image then saving it
+                                        //modificar a imagem para um padrão
                                         resultImage.Resize(200, 200, Inter.Cubic).Save(path + @"\" + txtPersonName.Text + "_" + DateTime.Now.ToString("dd-mm-yyyy-hh-mm-ss") + ".jpg");
                                         Thread.Sleep(1000);
                                     }
@@ -115,7 +114,7 @@ namespace FaceRecognition
                                 }));
                             }
 
-                            // Step 5: Recognize the face 
+                            //Outra etapa do reconhecimento facial 
                             if (isTrained)
                             {
                                 Image<Gray, Byte> grayFaceResult = resultImage.Convert<Gray, Byte>().Resize(200, 200, Inter.Cubic);
@@ -124,33 +123,31 @@ namespace FaceRecognition
                                 pictureBox1.Image = grayFaceResult.Bitmap;
                                 pictureBox2.Image = TrainedFaces[result.Label].Bitmap;
                                 Debug.WriteLine(result.Label + ". " + result.Distance);
-                                //Here results found known faces
+                                //resultado positivo
                                 if (result.Label != -1 && result.Distance < 2000)
                                 {
-                                    CvInvoke.PutText(currentFrame, PeopleNames[result.Label], new Point(face.X - 2, face.Y - 2),
+                                    CvInvoke.PutText(fotoAtual, PeopleNames[result.Label], new Point(face.X - 2, face.Y - 2),
                                         FontFace.HersheyComplex, 1.0, new Bgr(Color.Orange).MCvScalar);
-                                    CvInvoke.Rectangle(currentFrame, face, new Bgr(Color.Green).MCvScalar, 2);
+                                    CvInvoke.Rectangle(fotoAtual, face, new Bgr(Color.Green).MCvScalar, 2);
                                 }
-                                //here results did not found any know faces
+                                //resultado negativo
                                 else
                                 {
-                                    CvInvoke.PutText(currentFrame, "Unknown", new Point(face.X - 2, face.Y - 2),
+                                    CvInvoke.PutText(fotoAtual, "Não encontrado", new Point(face.X - 2, face.Y - 2),
                                         FontFace.HersheyComplex, 1.0, new Bgr(Color.Orange).MCvScalar);
-                                    CvInvoke.Rectangle(currentFrame, face, new Bgr(Color.Red).MCvScalar, 2);
+                                    CvInvoke.Rectangle(fotoAtual, face, new Bgr(Color.Red).MCvScalar, 2);
 
                                 }
                             }
                         }
                     }
                 }
-
-                //Render the video capture into the Picture Box picCapture
-                picCapture.Image = currentFrame.Bitmap;
+                picCapture.Image = fotoAtual.Bitmap;
             }
 
-            //Dispose the Current Frame after processing it to reduce the memory consumption.
-            if (currentFrame != null)
-                currentFrame.Dispose();
+            //esvaziar a variável 
+            if (fotoAtual != null)
+                fotoAtual.Dispose();
         }
 
         private void btnDetectFaces_Click(object sender, EventArgs e)
@@ -168,7 +165,7 @@ namespace FaceRecognition
         {
             TrainImagesFromDir();
         }
-        //Step 4: train Images .. we will use the saved images from the previous example 
+        //Opção de trainamento com imagens
         private bool TrainImagesFromDir()
         {
             int ImagesCount = 0;
@@ -214,7 +211,7 @@ namespace FaceRecognition
             catch (Exception ex)
             {
                 isTrained = false;
-                MessageBox.Show("Error in Train Images: " + ex.Message);
+                MessageBox.Show("Erro no treinamento: " + ex.Message);
                 return false;
             }
 

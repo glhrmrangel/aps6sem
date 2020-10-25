@@ -34,3 +34,39 @@ C:\Users\Gaming PC\source\repos\FaceRecognition\FaceRecognition\obj\Debug\FaceRe
 C:\Users\Gaming PC\source\repos\FaceRecognition\FaceRecognition\obj\Debug\FaceRecognition.csproj.CopyComplete
 C:\Users\Gaming PC\source\repos\FaceRecognition\FaceRecognition\obj\Debug\FaceRecognition.exe
 C:\Users\Gaming PC\source\repos\FaceRecognition\FaceRecognition\obj\Debug\FaceRecognition.pdb
+C:\Users\Guilherme\Documents\aps6sem\FaceRecognition\FaceRecognition\bin\Debug\FaceRecognition.exe.config
+C:\Users\Guilherme\Documents\aps6sem\FaceRecognition\FaceRecognition\bin\Debug\FaceRecognition.exe
+C:\Users\Guilherme\Documents\aps6sem\FaceRecognition\FaceRecognition\bin\Debug\FaceRecognition.pdb
+C:\Users\Guilherme\Documents\aps6sem\FaceRecognition\FaceRecognition\bin\Debug\Emgu.CV.UI.dll
+C:\Users\Guilherme\Documents\aps6sem\FaceRecognition\FaceRecognition\bin\Debug\Emgu.CV.UI.GL.dll
+C:\Users\Guilherme\Documents\aps6sem\FaceRecognition\FaceRecognition\bin\Debug\Emgu.CV.World.dll
+C:\Users\Guilherme\Documents\aps6sem\FaceRecognition\FaceRecognition\bin\Debug\OpenTK.dll
+C:\Users\Guilherme\Documents\aps6sem\FaceRecognition\FaceRecognition\bin\Debug\OpenTK.GLControl.dll
+C:\Users\Guilherme\Documents\aps6sem\FaceRecognition\FaceRecognition\bin\Debug\ZedGraph.dll
+C:\Users\Guilherme\Documents\aps6sem\FaceRecognition\FaceRecognition\bin\Debug\Emgu.CV.UI.xml
+C:\Users\Guilherme\Documents\aps6sem\FaceRecognition\FaceRecognition\bin\Debug\Emgu.CV.UI.GL.xml
+C:\Users\Guilherme\Documents\aps6sem\FaceRecognition\FaceRecognition\bin\Debug\Emgu.CV.World.xml
+C:\Users\Guilherme\Documents\aps6sem\FaceRecognition\FaceRecognition\bin\Debug\OpenTK.xml
+C:\Users\Guilherme\Documents\aps6sem\FaceRecognition\FaceRecognition\bin\Debug\OpenTK.GLControl.xml
+C:\Users\Guilherme\Documents\aps6sem\FaceRecognition\FaceRecognition\bin\Debug\ZedGraph.xml
+C:\Users\Guilherme\Documents\aps6sem\FaceRecognition\FaceRecognition\bin\Debug\de\ZedGraph.resources.dll
+C:\Users\Guilherme\Documents\aps6sem\FaceRecognition\FaceRecognition\bin\Debug\es\ZedGraph.resources.dll
+C:\Users\Guilherme\Documents\aps6sem\FaceRecognition\FaceRecognition\bin\Debug\fr\ZedGraph.resources.dll
+C:\Users\Guilherme\Documents\aps6sem\FaceRecognition\FaceRecognition\bin\Debug\hu\ZedGraph.resources.dll
+C:\Users\Guilherme\Documents\aps6sem\FaceRecognition\FaceRecognition\bin\Debug\it\ZedGraph.resources.dll
+C:\Users\Guilherme\Documents\aps6sem\FaceRecognition\FaceRecognition\bin\Debug\ja\ZedGraph.resources.dll
+C:\Users\Guilherme\Documents\aps6sem\FaceRecognition\FaceRecognition\bin\Debug\pt\ZedGraph.resources.dll
+C:\Users\Guilherme\Documents\aps6sem\FaceRecognition\FaceRecognition\bin\Debug\ru\ZedGraph.resources.dll
+C:\Users\Guilherme\Documents\aps6sem\FaceRecognition\FaceRecognition\bin\Debug\sk\ZedGraph.resources.dll
+C:\Users\Guilherme\Documents\aps6sem\FaceRecognition\FaceRecognition\bin\Debug\sv\ZedGraph.resources.dll
+C:\Users\Guilherme\Documents\aps6sem\FaceRecognition\FaceRecognition\bin\Debug\tr\ZedGraph.resources.dll
+C:\Users\Guilherme\Documents\aps6sem\FaceRecognition\FaceRecognition\bin\Debug\zh-cn\ZedGraph.resources.dll
+C:\Users\Guilherme\Documents\aps6sem\FaceRecognition\FaceRecognition\bin\Debug\zh-tw\ZedGraph.resources.dll
+C:\Users\Guilherme\Documents\aps6sem\FaceRecognition\FaceRecognition\obj\Debug\FaceRecognition.csprojAssemblyReference.cache
+C:\Users\Guilherme\Documents\aps6sem\FaceRecognition\FaceRecognition\obj\Debug\FaceRecognition.Form1.resources
+C:\Users\Guilherme\Documents\aps6sem\FaceRecognition\FaceRecognition\obj\Debug\FaceRecognition.Properties.Resources.resources
+C:\Users\Guilherme\Documents\aps6sem\FaceRecognition\FaceRecognition\obj\Debug\FaceRecognition.csproj.GenerateResource.cache
+C:\Users\Guilherme\Documents\aps6sem\FaceRecognition\FaceRecognition\obj\Debug\FaceRecognition.csproj.CoreCompileInputs.cache
+C:\Users\Guilherme\Documents\aps6sem\FaceRecognition\FaceRecognition\obj\Debug\FaceRecognition.csproj.CopyComplete
+C:\Users\Guilherme\Documents\aps6sem\FaceRecognition\FaceRecognition\obj\Debug\FaceRecognition.exe
+C:\Users\Guilherme\Documents\aps6sem\FaceRecognition\FaceRecognition\obj\Debug\FaceRecognition.pdb

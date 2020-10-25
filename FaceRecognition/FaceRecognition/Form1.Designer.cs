@@ -48,59 +48,59 @@
             // 
             this.picCapture.Location = new System.Drawing.Point(5, 6);
             this.picCapture.Name = "picCapture";
-            this.picCapture.Size = new System.Drawing.Size(653, 436);
+            this.picCapture.Size = new System.Drawing.Size(781, 222);
             this.picCapture.TabIndex = 0;
             this.picCapture.TabStop = false;
             // 
             // btnCapture
             // 
-            this.btnCapture.Location = new System.Drawing.Point(665, 13);
+            this.btnCapture.Location = new System.Drawing.Point(12, 415);
             this.btnCapture.Name = "btnCapture";
             this.btnCapture.Size = new System.Drawing.Size(123, 23);
             this.btnCapture.TabIndex = 1;
-            this.btnCapture.Text = "1. Capture";
+            this.btnCapture.Text = "Tirar foto";
             this.btnCapture.UseVisualStyleBackColor = true;
             this.btnCapture.Click += new System.EventHandler(this.btnCapture_Click);
             // 
             // btnDetectFaces
             // 
-            this.btnDetectFaces.Location = new System.Drawing.Point(665, 43);
+            this.btnDetectFaces.Location = new System.Drawing.Point(177, 415);
             this.btnDetectFaces.Name = "btnDetectFaces";
             this.btnDetectFaces.Size = new System.Drawing.Size(123, 23);
             this.btnDetectFaces.TabIndex = 2;
-            this.btnDetectFaces.Text = "2. Detect Faces";
+            this.btnDetectFaces.Text = "Comparar";
             this.btnDetectFaces.UseVisualStyleBackColor = true;
             this.btnDetectFaces.Click += new System.EventHandler(this.btnDetectFaces_Click);
             // 
             // txtPersonName
             // 
-            this.txtPersonName.Location = new System.Drawing.Point(666, 230);
+            this.txtPersonName.Location = new System.Drawing.Point(13, 378);
             this.txtPersonName.Name = "txtPersonName";
             this.txtPersonName.Size = new System.Drawing.Size(122, 20);
             this.txtPersonName.TabIndex = 3;
             // 
             // btnTrain
             // 
-            this.btnTrain.Location = new System.Drawing.Point(666, 256);
+            this.btnTrain.Location = new System.Drawing.Point(503, 415);
             this.btnTrain.Name = "btnTrain";
             this.btnTrain.Size = new System.Drawing.Size(122, 23);
             this.btnTrain.TabIndex = 5;
-            this.btnTrain.Text = "4. Train Images";
+            this.btnTrain.Text = "Treinamento";
             this.btnTrain.UseVisualStyleBackColor = true;
             this.btnTrain.Click += new System.EventHandler(this.btnTrain_Click);
             // 
             // btnRecognize
             // 
-            this.btnRecognize.Location = new System.Drawing.Point(666, 285);
+            this.btnRecognize.Location = new System.Drawing.Point(664, 415);
             this.btnRecognize.Name = "btnRecognize";
             this.btnRecognize.Size = new System.Drawing.Size(122, 23);
             this.btnRecognize.TabIndex = 6;
-            this.btnRecognize.Text = "5. Recognize Persons";
+            this.btnRecognize.Text = "Reconhecer";
             this.btnRecognize.UseVisualStyleBackColor = true;
             // 
             // picDetected
             // 
-            this.picDetected.Location = new System.Drawing.Point(665, 101);
+            this.picDetected.Location = new System.Drawing.Point(12, 238);
             this.picDetected.Name = "picDetected";
             this.picDetected.Size = new System.Drawing.Size(123, 123);
             this.picDetected.TabIndex = 7;
@@ -108,28 +108,28 @@
             // 
             // btnAddPerson
             // 
-            this.btnAddPerson.Location = new System.Drawing.Point(665, 73);
+            this.btnAddPerson.Location = new System.Drawing.Point(343, 415);
             this.btnAddPerson.Name = "btnAddPerson";
             this.btnAddPerson.Size = new System.Drawing.Size(123, 23);
             this.btnAddPerson.TabIndex = 9;
-            this.btnAddPerson.Text = "3. Add Person";
+            this.btnAddPerson.Text = "Adicionar cadastro";
             this.btnAddPerson.UseVisualStyleBackColor = true;
             this.btnAddPerson.Click += new System.EventHandler(this.btnAddPerson_Click);
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(674, 314);
+            this.pictureBox1.Location = new System.Drawing.Point(620, 303);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(53, 68);
+            this.pictureBox1.Size = new System.Drawing.Size(85, 95);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(733, 314);
+            this.pictureBox2.Location = new System.Drawing.Point(711, 303);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(53, 68);
+            this.pictureBox2.Size = new System.Drawing.Size(75, 95);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 10;
             this.pictureBox2.TabStop = false;
